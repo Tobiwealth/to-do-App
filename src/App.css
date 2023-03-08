@@ -1,0 +1,7 @@
+.app {
+    height: 100vh;
+    overflow-y: scroll;
+    background: #262626;
+    min-width: 375px;
+    max-width: 1440px;
+}
