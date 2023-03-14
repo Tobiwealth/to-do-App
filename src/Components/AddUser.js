@@ -6,7 +6,7 @@ import Header from "./Header";
 import plus from "../Images/plus.png";
 import styles from "./all.module.css";
 
-const AddUser = ({onTask, counter,setCounter}) => {
+const AddUser = ({onTask, counter,setCounter, completeCount}) => {
   const [task, setTask] = useState("");
   
 
@@ -47,7 +47,7 @@ const AddUser = ({onTask, counter,setCounter}) => {
           Created Tasks <span>{counter}</span>
         </p>
         <p>
-          Completed <span>0</span>
+          Completed <span>{completeCount}</span>
         </p>
       </div>
     </div>

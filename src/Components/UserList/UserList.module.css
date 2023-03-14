@@ -29,7 +29,11 @@
     background-color: transparent;
     border: 1px solid #1E6F9F;
     border-radius: 20rem;
+    cursor: pointer;
 }
 .trash{
     cursor: pointer;
+}
+.complete{
+    background-color: #1E6F9F !important;
 }
