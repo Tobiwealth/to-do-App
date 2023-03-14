@@ -20,7 +20,7 @@ function App() {
   }
   let content = (<NoTask/>);
   if (addTask.length > 0){
-    content = <UserList items={addTask} />;
+    content = addTask.map((task) => <UserList key={task.id} task={task} items={addTask} setItems={setAddTask} />);
   }
   return (
     <div className='app'>

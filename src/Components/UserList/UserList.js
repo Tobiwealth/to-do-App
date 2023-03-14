@@ -1,21 +1,21 @@
 import React from 'react'
 import Trash from '../../Images/trash.png'
 import styles from './UserList.module.css'
-const UserList = (props) => {
+
+const UserList = ({items, setItems, task}) => {
+  const trashHandler = () => {
+    setItems(items.filter((item) => item.id !== task.id));
+  };
 
   return (
     <div>
       <ul className={styles.unodered}>
-        {props.items.map((lists) => {
-          return (
-            <li key={lists.id} className={styles.list}>
-              {" "}
-              <span
-              />
-              {lists.text} <img src={Trash} alt="Trash can" />
-            </li>
-          );
-        })}
+          <li className={styles.list}>
+            {" "}
+            <span
+            />
+            {task.text} <img className={styles.trash} onClick={trashHandler} src={Trash} alt="Trash can" />
+          </li>
       </ul>
     </div>
   );

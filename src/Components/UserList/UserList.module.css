@@ -30,3 +30,6 @@
     border: 1px solid #1E6F9F;
     border-radius: 20rem;
 }
+.trash{
+    cursor: pointer;
+}
