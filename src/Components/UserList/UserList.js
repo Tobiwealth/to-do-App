@@ -2,9 +2,10 @@ import React from 'react'
 import Trash from '../../Images/trash.png'
 import styles from './UserList.module.css'
 
-const UserList = ({items, setItems, task}) => {
+const UserList = ({items, setItems, task, counter,setCounter}) => {
   const trashHandler = () => {
     setItems(items.filter((item) => item.id !== task.id));
+    setCounter(counter - 1);
   };
 
   return (

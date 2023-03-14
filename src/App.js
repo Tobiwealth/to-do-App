@@ -5,6 +5,7 @@ import NoTask from './Components/NoTask';
 import './App.css'
 function App() {
   const [addTask, setAddTask] = useState([]);
+  const [counter, setCounter] = useState(0);
   
 
   const inputTask = (enteredText) => {
@@ -20,11 +21,13 @@ function App() {
   }
   let content = (<NoTask/>);
   if (addTask.length > 0){
-    content = addTask.map((task) => <UserList key={task.id} task={task} items={addTask} setItems={setAddTask} />);
+    content = addTask.map((task) => 
+      <UserList key={task.id} task={task} items={addTask} setItems={setAddTask} counter={counter} setCounter={setCounter} />
+    );
   }
   return (
     <div className='app'>
-      <AddUser onTask={inputTask} />
+      <AddUser counter={counter} setCounter={setCounter} onTask={inputTask} />
       <section>
       {content}
       </section>
