@@ -6,9 +6,9 @@ import Header from "./Header";
 import plus from "../Images/plus.png";
 import styles from "./all.module.css";
 
-const AddUser = (props) => {
+const AddUser = ({onTask, counter,setCounter, completeCount}) => {
   const [task, setTask] = useState("");
-  const [counter, setCounter] = useState(0);
+  
 
   const createTaskHandler = (event) => {
     event.preventDefault();
@@ -20,7 +20,7 @@ const AddUser = (props) => {
     console.log(task);
     setTask("");
     setCounter((prevCounter) => prevCounter + 1);
-    props.onTask(task);
+    onTask(task);
   };
   const enteredTask = (event) => {
     setTask(event.target.value);
@@ -47,7 +47,7 @@ const AddUser = (props) => {
           Created Tasks <span>{counter}</span>
         </p>
         <p>
-          Completed <span>0</span>
+          Completed <span>{completeCount}</span>
         </p>
       </div>
     </div>
