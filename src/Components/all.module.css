@@ -38,6 +38,7 @@
     border-radius: 8px;
     padding: 16px;
     color: white;
+    cursor: pointer;
     display:flex ;
     gap: .3rem;
     margin-left: 1rem;

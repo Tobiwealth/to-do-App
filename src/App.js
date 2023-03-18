@@ -19,14 +19,7 @@ function App() {
 
     // } 
   }
-  {/* const handleCompleteCount = () => { addTask.map((item) => {
-    if(item.completeStatus === true){
-      setCompleteCount(completeCount+1);
-    }
-  })};
-  useEffect(()=>
-    handleCompleteCount()
-  ,[addTask.completeStatus])*/}
+  
 
   let content = (<NoTask/>);
   if (addTask.length > 0){

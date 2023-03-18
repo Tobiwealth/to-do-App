@@ -37,3 +37,11 @@
 .complete{
     background-color: #1E6F9F !important;
 }
+.strike{
+    text-decoration: line-through;
+    opacity: .5;
+}
+.none{
+    text-decoration: none;
+    opacity: 1;
+}
