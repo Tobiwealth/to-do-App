@@ -14,7 +14,9 @@ const UserList = ({
   const trashHandler = () => {
     setItems(items.filter((item) => item.id !== task.id));
     setCounter(counter - 1);
-    // setCompleteCount(completeCount -1)
+    // setCompleteCount((prevCount) =>
+    //   prevCount.completeStatus === true ? 0 : prevCount - 1
+    // );
   };
   const handleComplete = () => {
     setItems(

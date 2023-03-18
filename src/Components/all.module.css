@@ -19,8 +19,9 @@
 .input {
     all: unset;
     background: #262626;
-    border: 1px solid #0D0D0D;
+    border: 1px solid hsl(0, 0%, 5%);
     border-radius: 8px;
+    color: white;
     /* width: 24rem;
     padding: .5rem; */
     /* margin: 2rem auto; */
