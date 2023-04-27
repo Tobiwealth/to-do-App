@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import Button from "./Button";
-
 import Header from "./Header";
-
+import ErrorModal from "./ErrorModal/ErrorModal";
 import plus from "../Images/plus.png";
 import styles from "./all.module.css";
 
-const AddUser = ({onTask, counter,setCounter, completeCount}) => {
+const AddUser = ({ onTask, counter, setCounter, completeCount }) => {
   const [task, setTask] = useState("");
-  
+  const [showError, setShowError] = useState();
 
   const createTaskHandler = (event) => {
     event.preventDefault();
 
     if (task.trim().length === 0) {
+      setShowError({
+        title: "Invalid Input",
+        message: "Please enter a task (non empty values)",
+      });
       return;
     }
 
@@ -24,6 +27,9 @@ const AddUser = ({onTask, counter,setCounter, completeCount}) => {
   };
   const enteredTask = (event) => {
     setTask(event.target.value);
+  };
+  const removeErrorHandler = () => {
+    setShowError(null);
   };
   return (
     <div>
@@ -50,6 +56,13 @@ const AddUser = ({onTask, counter,setCounter, completeCount}) => {
           Completed <span>{completeCount}</span>
         </p>
       </div>
+      {showError && (
+        <ErrorModal
+          title={showError.title}
+          message={showError.message}
+          onConfirm={removeErrorHandler}
+        />
+      )}
     </div>
   );
 };
